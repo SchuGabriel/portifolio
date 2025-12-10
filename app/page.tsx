@@ -1,5 +1,6 @@
 import { About } from "./components/about";
 import { Hero } from "./components/hero";
+import { Skill } from "./components/skill";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <section id="hero" className="py-20">
         <About />
       </section>
+      <Skill />
     </main>
   );
 }
