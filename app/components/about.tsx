@@ -31,8 +31,8 @@ export function About() {
         <div className="w-20 h-1 bg-linear-to-r from-primary to-secondary mx-auto" />
       </div>
 
-      <div className="flex justify-between gap-12">
-        <div className="flex flex-col gap-10 w-1/2">
+      <div className="flex justify-between items-center gap-12">
+        <div className="flex flex-col gap-10 w-1/2 text-muted-foreground text-lg">
           <p>
             Desenvolvedor Full Stack apaixonado por criar soluções digitais que
             combinam design moderno com funcionalidade robusta. Com experiência
@@ -48,13 +48,15 @@ export function About() {
         <div className="flex-1">
           <div className="flex-1 flex-col space-y-6">
             {skills.map((skill, index) => (
-              <div className="flex p-6 rounded-lg bg-card gap-6" key={index}>
-                <div className="flex justify-center items-center bg-primary/10 p-3 rounded-lg">
+              <div className="flex p-6 rounded-lg bg-card gap-6 glass" key={index}>
+                <div className="flex justify-center items-center bg-primary/10 p-3 rounded-lg w-12 h-12 shrink-0">
                   <skill.icon width={24} height={24} className="text-primary" />
                 </div>
-                <div className="flex-1 flex-col">
+                <div className="flex-1 flex-col text-lg">
                   <h3>{skill.title}</h3>
-                  <p className="text-muted-foreground">{skill.description}</p>
+                  <p className="text-muted-foreground mt-1">
+                    {skill.description}
+                  </p>
                 </div>
               </div>
             ))}
