@@ -1,7 +1,8 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Send } from "lucide-react";
 
 export function Contact() {
   const contactWays = [
@@ -75,6 +76,14 @@ export function Contact() {
               </Card>
             </a>
           ))}
+        </div>
+
+        <div className="mt-8 text-center">
+          <Button variant="neon" size="lg" className="py-5" asChild>
+            <a href="https://wa.me/5554984464174?text=Encontrei%20seu%20site%20e%20gostaria%20de%20conversar%20contigo.">
+              <Send className="mr-2" /> Enviar Mensagem
+            </a>
+          </Button>
         </div>
       </div>
     </section>
