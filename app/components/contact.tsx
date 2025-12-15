@@ -2,34 +2,10 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Github, Linkedin, Mail, Send } from "lucide-react";
+import { Send } from "lucide-react";
+import { contactWays } from "./contact-ways";
 
 export function Contact() {
-  const contactWays = [
-    {
-      icon: Mail,
-      title: "Email",
-      description: "gabrielschu79@gmail.com",
-      color: "text-primary",
-      external: false,
-    },
-    {
-      icon: Linkedin,
-      title: "LinkedIn",
-      description: "in/gabriel-schu",
-      link: "https://www.linkedin.com/in/gabriel-schu",
-      color: "text-blue-600",
-      external: true,
-    },
-    {
-      icon: Github,
-      title: "Github",
-      description: "SchuGabriel",
-      link: "https://github.com/SchuGabriel",
-      external: true,
-    },
-  ];
-
   return (
     <section id="contact" className="py-20 relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
