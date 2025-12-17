@@ -35,7 +35,7 @@ export function Skill() {
   ];
 
   return (
-    <section id="skill" className="py-20 bg-muted/20">
+    <section id="skill" className="py-20 bg-muted/20 scroll-mt-15">
       <div className="container mx-auto px-4 md:px-6 flex flex-col items-center">
         <div className="mb-16">
           <div className="flex items-center justify-center text-5xl mb-4">

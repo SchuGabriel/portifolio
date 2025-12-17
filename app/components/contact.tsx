@@ -7,7 +7,10 @@ import { contactWays } from "./contact-ways";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-20 relative overflow-hidden">
+    <section
+      id="contact"
+      className="py-20 relative overflow-hidden scroll-mt-15"
+    >
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
 
       <div className="container relative mx-auto px-4 md:px-6 flex flex-col items-center">
