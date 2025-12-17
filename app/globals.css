@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-button{
+button {
   cursor: pointer;
 }
 
@@ -47,7 +47,6 @@ button{
 /*     BASE THEME     */
 /* ------------------ */
 :root {
-  /* Dark Theme Base */
   --background: 240 10% 5%;
   --foreground: 240 5% 96%;
 
@@ -57,17 +56,14 @@ button{
   --popover: 240 10% 8%;
   --popover-foreground: 240 5% 96%;
 
-  /* Neon Purple Primary */
   --primary: 280 100% 70%;
   --primary-foreground: 240 10% 5%;
   --primary-glow: 280 100% 80%;
 
-  /* Cyan Accent */
   --secondary: 190 100% 60%;
   --secondary-foreground: 240 10% 5%;
   --secondary-glow: 190 100% 70%;
 
-  /* Muted & Subtle */
   --muted: 240 10% 15%;
   --muted-foreground: 240 5% 65%;
 
@@ -83,21 +79,27 @@ button{
 
   --radius: 0.75rem;
 
-  /* Custom Gradients */
-  --gradient-primary: linear-gradient(135deg, hsl(280 100% 70%), hsl(190 100% 60%));
+  --gradient-primary: linear-gradient(
+    135deg,
+    hsl(280 100% 70%),
+    hsl(190 100% 60%)
+  );
   --gradient-dark: linear-gradient(180deg, hsl(240 10% 5%), hsl(240 10% 8%));
-  --gradient-glow: radial-gradient(circle at center, hsl(280 100% 70% / 0.15), transparent 70%);
+  --gradient-glow: radial-gradient(
+    circle at center,
+    hsl(280 100% 70% / 0.15),
+    transparent 70%
+  );
 
-  /* Glassmorphism */
   --glass-bg: hsl(240 10% 10% / 0.7);
   --glass-border: hsl(240 10% 30% / 0.2);
 
-  /* Shadows with Glow */
-  --shadow-neon: 0 0 20px hsl(280 100% 70% / 0.5), 0 0 40px hsl(280 100% 70% / 0.3);
-  --shadow-cyan: 0 0 20px hsl(190 100% 60% / 0.5), 0 0 40px hsl(190 100% 60% / 0.3);
+  --shadow-neon: 0 0 20px hsl(280 100% 70% / 0.5),
+    0 0 40px hsl(280 100% 70% / 0.3);
+  --shadow-cyan: 0 0 20px hsl(190 100% 60% / 0.5),
+    0 0 40px hsl(190 100% 60% / 0.3);
   --shadow-subtle: 0 4px 20px hsl(240 10% 3% / 0.5);
 
-  /* Animations */
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -119,7 +121,12 @@ button{
     font-family: var(--font-space-grotesk), sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-orbitron), sans-serif;
     font-weight: 700;
   }
@@ -129,37 +136,41 @@ button{
   }
 
   .hero-section {
-  position: relative;
-}
+    position: relative;
+  }
 
-.hero-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: var(--hero-img);
-  background-size: cover;
-  background-position: center;
-  opacity: 0.5;
-  z-index: 0;
-}
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--hero-img);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    z-index: 0;
+  }
 
-.hero-section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    hsl(var(--background) / 0) 0%,
-    hsl(var(--background) / 1) 95%
-  );
-  z-index: 1;
-}
+  .hero-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        hsl(var(--background) / 0) 0%,
+        hsl(var(--background) / 1) 95%
+      ),
+      linear-gradient(
+        to bottom,
+        hsl(var(--background) / 0) 0%,
+        hsl(var(--background) / 1) 95%
+      );
+    z-index: 1;
+  }
 
-.hero-section > * {
-  position: relative;
-  z-index: 2;
-}
-
+  .hero-section > * {
+    position: relative;
+    z-index: 2;
+  }
 
   /* Custom scrollbar */
   ::-webkit-scrollbar {
@@ -183,14 +194,12 @@ button{
 /*   COMPONENT LAYER  */
 /* ------------------ */
 @layer components {
-  /* Glass */
   .glass {
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border);
   }
 
-  /* Neon */
   .glow-primary {
     box-shadow: var(--shadow-neon);
   }
@@ -199,7 +208,6 @@ button{
     box-shadow: var(--shadow-cyan);
   }
 
-  /* Gradient text */
   .gradient-text {
     background: var(--gradient-primary);
     -webkit-background-clip: text;
@@ -207,7 +215,6 @@ button{
     background-clip: text;
   }
 
-  /* Hover lift */
   .hover-lift {
     @apply transition-all duration-300;
   }
