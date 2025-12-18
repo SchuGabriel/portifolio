@@ -29,7 +29,7 @@ export function Hero() {
 
         <div className="flex gap-3">
           <Button variant="neon" size="lg">
-            Ver Projetos
+            <a href="#projects">Ver Projetos</a>
           </Button>
 
           <Button
@@ -37,7 +37,7 @@ export function Hero() {
             size="lg"
             className="border border-primary/80 hover:border-primary text-white"
           >
-            Contato
+            <a href="#contact">Contato</a>
           </Button>
         </div>
         <ArrowDown height={28} width={28} className="text-primary" />
