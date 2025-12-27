@@ -1,4 +1,6 @@
-import { Progress } from "@/components/ui/progress";
+"use client";
+
+import { motion } from "framer-motion";
 
 export function Skill() {
   const skills = [
@@ -34,10 +36,29 @@ export function Skill() {
     },
   ];
 
+  const barVariants = {
+    hidden: {
+      width: 0,
+    },
+    visible: (level: number) => ({
+      width: `${level}%`,
+      transition: {
+        duration: 0.8,
+        delay: 0.2,
+      },
+    }),
+  };
+
   return (
     <section id="skill" className="py-20 bg-muted/20 scroll-mt-15">
       <div className="container mx-auto px-4 md:px-6 flex flex-col items-center">
-        <div className="mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, amount: 0.3 }}
+          className="mb-16"
+        >
           <div className="flex items-center justify-center text-5xl mb-4">
             <h2>
               Minhas <span className="gradient-text">Habilidades</span>
@@ -45,34 +66,60 @@ export function Skill() {
           </div>
 
           <div className="w-20 h-1 bg-linear-to-r from-primary to-secondary mx-auto" />
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 w-full md:w-4/6">
+        <motion.div
+          viewport={{ once: true, amount: 0.3 }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 w-full md:w-4/6"
+        >
           {skills.map((skill, index) => (
-            <div key={index} className="p-6 bg-card glass rounded-lg">
+            <motion.div
+              key={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  x: index % 2 === 0 ? -40 : 40,
+                },
+                visible: {
+                  opacity: 1,
+                  x: 0,
+                  transition: {
+                    duration: 0.5,
+                  },
+                },
+              }}
+              className="p-6 bg-card glass rounded-lg"
+            >
               <div className="flex justify-between text-lg">
                 <h3>{skill.name}</h3>
                 <p className="text-primary font-semibold">{skill.level}%</p>
               </div>
               <div>
                 <div className="relative h-3 bg-muted rounded-full overflow-hidden mt-4">
-                  <div
-                    className={`absolute w-[95%] inset-y-0 left-0 bg-linear-to-r ${skill.color} rounded-full`}
-                    style={{
-                      transform: `translateX(-${100 - (skill.level || 0)}%)`,
-                    }}
-                  ></div>
+                  <motion.div
+                    className={`absolute inset-y-0 left-0 bg-linear-to-r ${skill.color} rounded-full`}
+                    variants={barVariants}
+                    custom={skill.level}
+                  />
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <p className="text-muted-foreground text-lg">
             Sempre aprendendo e evoluindo com novas tecnologias
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

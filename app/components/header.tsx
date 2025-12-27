@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 export function Header() {
@@ -25,7 +26,10 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      <div
+      <motion.div
+        initial={{ y: -80, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
         className={isScrolled ? "bg-card glass shadow-lg" : "bg-transparent"}
       >
         <div className="container mx-auto flex justify-between items-center py-4">
@@ -40,7 +44,7 @@ export function Header() {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </header>
   );
 }

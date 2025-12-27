@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { CodeXml, Lightbulb, Zap } from "lucide-react";
 
 const skills = [
@@ -19,10 +22,39 @@ const skills = [
 ];
 
 export function About() {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.25,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      x: 40,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
     <section id="about" className="py-20 scroll-mt-15">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, amount: 0.3 }}
+          className="mb-16"
+        >
           <div className="flex items-center justify-center text-5xl mb-4">
             <h2>
               Sobre <span className="gradient-text">Mim</span>
@@ -30,10 +62,16 @@ export function About() {
           </div>
 
           <div className="w-20 h-1 bg-linear-to-r from-primary to-secondary mx-auto" />
-        </div>
+        </motion.div>
 
         <div className="flex justify-between items-center gap-12">
-          <div className="flex flex-col gap-10 w-1/2 text-muted-foreground text-lg">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="flex flex-col gap-10 w-1/2 text-muted-foreground text-lg"
+          >
             <p>
               Desenvolvedor Full Stack apaixonado por criar soluções digitais
               que combinam design moderno com funcionalidade robusta. Com
@@ -45,13 +83,20 @@ export function About() {
               escaláveis, sempre buscando as melhores práticas de
               desenvolvimento e as tecnologias mais recentes do mercado.
             </p>
-          </div>
-          <div className="flex-1">
+          </motion.div>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="flex-1"
+          >
             <div className="flex-1 flex-col space-y-6">
               {skills.map((skill, index) => (
-                <div
-                  className="flex p-6 rounded-lg bg-card gap-6 glass"
+                <motion.div
                   key={index}
+                  variants={itemVariants}
+                  className="flex p-6 rounded-lg bg-card gap-6 glass"
                 >
                   <div className="flex justify-center items-center bg-primary/10 p-3 rounded-lg w-12 h-12 shrink-0">
                     <skill.icon
@@ -66,10 +111,10 @@ export function About() {
                       {skill.description}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
