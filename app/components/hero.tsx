@@ -28,6 +28,7 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
           <Avatar className="w-40 h-40 border-4 border-primary glow-primary mb-4">
@@ -39,6 +40,7 @@ export function Hero() {
         <motion.div
           variants={containerVariants}
           whileInView="visible"
+          viewport={{ once: true }}
           initial="hidden"
           className="flex flex-col items-center justify-center gap-4"
         >
