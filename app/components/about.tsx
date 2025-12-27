@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { CodeXml, Lightbulb, Zap } from "lucide-react";
+import { containerVariants } from "./motion/variants";
+import { SectionTitle } from "./section-title";
 
 const skills = [
   {
@@ -22,15 +24,6 @@ const skills = [
 ];
 
 export function About() {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.25,
-      },
-    },
-  };
-
   const itemVariants = {
     hidden: {
       opacity: 0,
@@ -48,21 +41,7 @@ export function About() {
   return (
     <section id="about" className="py-20 scroll-mt-15">
       <div className="container mx-auto px-4 md:px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true, amount: 0.3 }}
-          className="mb-16"
-        >
-          <div className="flex items-center justify-center text-5xl mb-4">
-            <h2>
-              Sobre <span className="gradient-text">Mim</span>
-            </h2>
-          </div>
-
-          <div className="w-20 h-1 bg-linear-to-r from-primary to-secondary mx-auto" />
-        </motion.div>
+        <SectionTitle firstTitle="Sobre" secondTitle="Mim" />
 
         <div className="flex justify-between items-center gap-12">
           <motion.div

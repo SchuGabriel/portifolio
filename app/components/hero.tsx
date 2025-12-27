@@ -7,17 +7,9 @@ import { motion } from "motion/react";
 import hero from "@/assets/hero.png";
 import profile from "@/assets/profile.png";
 import { ArrowDown } from "lucide-react";
+import { containerVariants } from "./motion/variants";
 
 export function Hero() {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {

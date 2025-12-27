@@ -5,17 +5,10 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
 import { contactWays } from "./contact-ways";
+import { containerVariants } from "./motion/variants";
+import { SectionTitle } from "./section-title";
 
 export function Contact() {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.25,
-      },
-    },
-  };
-
   const itemVariants = {
     hidden: {
       opacity: 0,
@@ -38,21 +31,7 @@ export function Contact() {
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
 
       <div className="container relative mx-auto px-4 md:px-6 flex flex-col items-center">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true, amount: 0.3 }}
-          className="mb-16"
-        >
-          <div className="flex items-center justify-center text-5xl mb-4">
-            <h2>
-              Entre em <span className="gradient-text">Contato</span>
-            </h2>
-          </div>
-
-          <div className="w-20 h-1 bg-linear-to-r from-primary to-secondary mx-auto" />
-        </motion.div>
+        <SectionTitle firstTitle="Entre em" secondTitle="Contato" />
 
         <motion.div
           initial={{ opacity: 0, y: 50 }}
