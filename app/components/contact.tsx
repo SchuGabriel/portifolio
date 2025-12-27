@@ -50,7 +50,7 @@ export function Contact() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="grid grid-cols-2 md:grid-cols-3 gap-8 w-full md:w-4/6 mt-10"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full md:w-4/6 mt-10"
         >
           {contactWays.map((contactway, index) => (
             <motion.a
@@ -67,7 +67,7 @@ export function Contact() {
                     className={`${contactway.color ?? ""} w-8 h-8`}
                   />
                 </CardHeader>
-                <CardContent className="space-y-1.5">
+                <CardContent className="space-y-1.5 wrap-break-word">
                   <h3 className="text-lg">{contactway.title}</h3>
                   <p className="text-muted-foreground">
                     {contactway.description}
