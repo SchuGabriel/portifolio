@@ -39,7 +39,7 @@ export function About() {
   };
 
   return (
-    <section id="about" className="py-20 scroll-mt-15">
+    <section id="about" className="py-20 scroll-mt-15 overflow-x-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <SectionTitle firstTitle="Sobre" secondTitle="Mim" />
 
@@ -68,7 +68,7 @@ export function About() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="flex-1"
+            className="flex-1 overflow-x-hidden"
           >
             <div className="flex-1 flex-col space-y-6">
               {skills.map((skill, index) => (
