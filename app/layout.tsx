@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Portifólio - Gabriel Schu",
   description: "Portifolio do programador Gabriel Schu",
   verification: {
-    google: "tk5hindS6UBqTZO2yR-U0ZGp0ZaYs9AmkEGm3JZmkas",
+    google: "I6SAyN6q7MlwQWkSNRhQdRU7wWhLvCeLpOyBNmR8b0E",
   },
 };
 
