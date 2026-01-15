@@ -4,6 +4,19 @@ import { motion } from "framer-motion";
 import { SectionTitle } from "./section-title";
 
 export function Skill() {
+  const isDesktop = typeof window !== "undefined" && window.innerWidth >= 1024;
+  const variants = (isDesktop: boolean, index: number) => ({
+    hidden: {
+      opacity: 0,
+      x: isDesktop ? (index % 2 === 0 ? -40 : 40) : 0,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.5 },
+    },
+  });
+
   const skills = [
     {
       name: "React.js",
@@ -62,22 +75,10 @@ export function Skill() {
           {skills.map((skill, index) => (
             <motion.div
               key={index}
+              variants={variants(isDesktop, index)}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  x: index % 2 === 0 ? -40 : 40,
-                },
-                visible: {
-                  opacity: 1,
-                  x: 0,
-                  transition: {
-                    duration: 0.5,
-                  },
-                },
-              }}
               className="p-6 bg-card glass rounded-lg"
             >
               <div className="flex justify-between text-lg">

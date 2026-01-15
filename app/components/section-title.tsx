@@ -17,7 +17,7 @@ export function SectionTitle({
       viewport={{ once: true, amount: 0.3 }}
       className="mb-16"
     >
-      <div className="flex items-center justify-center text-5xl mb-4">
+      <div className="flex items-center justify-center text-4xl lg:text-5xl mb-4 text-center">
         <h2>
           {firstTitle} <span className="gradient-text">{secondTitle}</span>
         </h2>

@@ -42,25 +42,25 @@ export function Hero() {
           whileInView="visible"
           viewport={{ once: true }}
           initial="hidden"
-          className="flex flex-col items-center justify-center gap-4"
+          className="flex flex-col items-center justify-center gap-4 px-4"
         >
           <motion.h1
             variants={itemVariants}
-            className="flex gap-5 text-7xl mb-0.5"
+            className="flex flex-wrap justify-center leading-14 gap-5 text-5xl lg:text-7xl mb-0.5"
           >
             Gabriel <span className="gradient-text">Schu</span>
           </motion.h1>
 
           <motion.h3
             variants={itemVariants}
-            className="text-primary text-4xl mb-2"
+            className="text-primary text-2xl lg:text-4xl mb-2 text-center"
           >
             Desenvolvedor Full Stack
           </motion.h3>
 
           <motion.span
             variants={itemVariants}
-            className="text-xl text-muted-foreground mb-4"
+            className="flex text-center text-xl text-muted-foreground mb-4 mx-2"
           >
             Criando interfaces modernas e sistemas robustos
           </motion.span>

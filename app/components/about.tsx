@@ -39,17 +39,17 @@ export function About() {
   };
 
   return (
-    <section id="about" className="py-20 scroll-mt-15">
+    <section id="about" className="py-20 scroll-mt-15 overflow-x-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <SectionTitle firstTitle="Sobre" secondTitle="Mim" />
 
-        <div className="flex justify-between items-center gap-12">
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-12">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true, amount: 0.3 }}
-            className="flex flex-col gap-10 w-1/2 text-muted-foreground text-lg"
+            className="flex flex-col gap-10 lg:w-1/2 text-muted-foreground text-base lg:text-lg text-center lg:text-left"
           >
             <p>
               Desenvolvedor Full Stack apaixonado por criar soluções digitais
@@ -68,7 +68,7 @@ export function About() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="flex-1"
+            className="flex-1 overflow-x-hidden"
           >
             <div className="flex-1 flex-col space-y-6">
               {skills.map((skill, index) => (
