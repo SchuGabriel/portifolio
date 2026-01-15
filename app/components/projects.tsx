@@ -47,7 +47,7 @@ export function Projects() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
-          className="flex"
+          className="flex flex-col md:flex-row gap-5"
         >
           <div className="grid grid-cols-1 gap-8 w-full">
             {projects.map((project, index) => (
